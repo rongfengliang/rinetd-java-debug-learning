@@ -1,0 +1,5 @@
+FROM centos:centos7.9.2009
+COPY rinetd /app/rinetd
+COPY rinetd.conf /app/rinetd.conf
+RUN chmod +x /app/rinetd
+ENTRYPOINT [ "/app/rinetd","-c","/app/rinetd.conf","-f" ]
